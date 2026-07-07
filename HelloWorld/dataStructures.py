@@ -1,3 +1,7 @@
+import json
+from pathlib import Path
+
+
 def read_portfolio(file_path):
     """
     Reads a CSV file containing portfolio data and returns a list of dictionaries.
@@ -19,5 +23,8 @@ def read_portfolio(file_path):
     
     return portfolio_data, stock_sum
 
-item, totalPrice = read_portfolio('companies.csv')
+csv_path = Path(__file__).with_name('Data') / 'companies.csv'
+item, totalPrice = read_portfolio(csv_path)
+json_data = json.dumps(item, indent=4)
+print(json_data)
 print(f"Total price of the portfolio: {totalPrice}")

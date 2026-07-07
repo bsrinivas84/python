@@ -5,7 +5,7 @@ from numpy import square
 def cubes(x):
     return x ** 3
 
-with open('test.csv', 'r') as csvfile:
+with open('Data/test.csv', 'r') as csvfile:
     reader = csv.reader(csvfile)
     headers = next(reader)  # Skip the header line
     print("Cubes of numbers in test.csv:")
