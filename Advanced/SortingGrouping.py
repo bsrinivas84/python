@@ -1,6 +1,7 @@
 #Sorting 1
 
 import csv
+from itertools import groupby
 from pathlib import Path
 
 
@@ -31,3 +32,10 @@ with open(csv_path, 'r') as f:
 print(lambda_portfolio_data)
 lambda_portfolio_data.sort(key=lambda holding: holding['name'])
 print(lambda_portfolio_data)
+
+print("=========================================")
+
+#grouping
+
+for name, group in groupby(portfolio_data, key=lambda holding: holding['name']):
+    print(name, list(group))
