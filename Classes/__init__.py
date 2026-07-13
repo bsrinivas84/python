@@ -1,0 +1,1 @@
+from myClass import MyClass
